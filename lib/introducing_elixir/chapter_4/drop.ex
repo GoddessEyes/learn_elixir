@@ -1,6 +1,8 @@
 # Chapter 4 logic & recursion
 
 defmodule IntroducingElixir.Chapter4.Drop do
+  @spec fall_velocity(:earth | :mars | :moon, number) ::
+          :fast | :moving | :slow | :speedy | :stable
   def fall_velocity(planemo, distance) when distance > 0 do
     gravity = case planemo do
       :earth -> 9.8
