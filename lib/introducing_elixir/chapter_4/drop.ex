@@ -70,4 +70,10 @@ defmodule IntroducingElixir.Chapter4.Factorial do
     IO.puts "1 yields 1"
     1
   end
+  def test do
+    3 + 1
+  end
 end
+
+IntroducingElixir.Chapter4.Factorial.fact!(3)
+IntroducingElixir.Chapter4.Factorial.test
