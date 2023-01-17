@@ -37,14 +37,22 @@ defmodule ListDrop do
   end
 end
 
-defmodule IntroducingElixir.Chapter6.Examples do
 
-  def use_print do
-    print_x_y! = fn ->
-      [1, x, 3, y] = [1, 2, 3, 4]
-      IO.puts x
-      IO.puts y
-    end
-    print_x_y!.()
+defmodule Pascal do
+  def triangle(rows), do: triangle([[0, 1, 0]], 1, rows)
+
+  def triangle(list, count, rows) when count >= rows do
+    Enum.reverse list
   end
+
+  def triangle(list, count, rows) do
+    [prev | _] = list
+    triangle([add_row(prev) | list], count + 1, rows)
+  end
+
+  def add_row(init), do: add_row(init, 0, [])
+
+  def add_row([], 0, final), do: [0 | final]
+
+  def add_row([h | t], last, new), do: add_row(t, h, [last + h | new])
 end
