@@ -1,6 +1,6 @@
-# Chapter 3 atoms, tuples & pattern matching
+# Chapter 3: Atoms, tuples & pattern matching
 
-defmodule IntroducingElixir.Chapter3.Drop do
+defmodule IntroducingElixir.Ch3.Drop do
   @spec fall_velocity({atom, number}) :: :ok | float
   def fall_velocity({:earth, distance}) when distance >= 0 do
     :math.sqrt(2 * 9.8 * distance)

@@ -1,6 +1,6 @@
-# Chapter 4 logic & recursion
+# Chapter 4: Logic & recursion
 
-defmodule IntroducingElixir.Chapter4.Drop do
+defmodule IntroducingElixir.Ch4.Drop do
   @spec fall_velocity(:earth | :mars | :moon, number) ::
           :fast | :moving | :slow | :speedy | :stable
   def fall_velocity(planemo, distance) when distance > 0 do
@@ -28,7 +28,7 @@ defmodule IntroducingElixir.Chapter4.Drop do
 end
 
 
-defmodule IntroducingElixir.Chapter4.Count do
+defmodule IntroducingElixir.Ch4.Count do
   @doc """
   Recur function with side-effect
   """
@@ -57,7 +57,7 @@ defmodule IntroducingElixir.Chapter4.Count do
 end
 
 
-defmodule IntroducingElixir.Chapter4.Factorial do
+defmodule IntroducingElixir.Ch4.Factorial do
   @spec fact!(number) :: number
   def fact!(number) when number > 1 do
     IO.puts "Calling from #{number}"
@@ -70,10 +70,4 @@ defmodule IntroducingElixir.Chapter4.Factorial do
     IO.puts "1 yields 1"
     1
   end
-  def test do
-    3 + 1
-  end
 end
-
-IntroducingElixir.Chapter4.Factorial.fact!(3)
-IntroducingElixir.Chapter4.Factorial.test

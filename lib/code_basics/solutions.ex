@@ -42,7 +42,7 @@ defmodule Solution do
 
 end
 
-
+# TODO: move to test and run as test
 defmodule Test do
   use ExUnit.Case
   import Solution

@@ -1,7 +1,7 @@
-# Chapter 6 Lists
+# Chapter 6: Lists
 
 
-defmodule IntroducingElixir.Chapter6.Overall do
+defmodule IntroducingElixir.Ch6.Overall do
   @spec product([]) :: 0
   def product([]), do: 0
 
@@ -19,8 +19,8 @@ defmodule IntroducingElixir.Chapter6.Overall do
   end
 end
 
-defmodule ListDrop do
-  import IntroducingElixir.Chapter3.Drop, only: [fall_velocity: 1]
+defmodule IntroducingElixir.Ch6.ListDrop do
+  import IntroducingElixir.Ch3.Drop, only: [fall_velocity: 1]
 
   @spec falls(list) :: any
   def falls(list) do
@@ -38,7 +38,7 @@ defmodule ListDrop do
 end
 
 
-defmodule Pascal do
+defmodule IntroducingElixir.Ch6.Pascal do
   def triangle(rows), do: triangle([[0, 1, 0]], 1, rows)
 
   def triangle(list, count, rows) when count >= rows do

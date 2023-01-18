@@ -1,13 +1,13 @@
-# Chapter 8 high-order func & list-comprehensions
+# Chapter 8: High-order func & list-comprehensions
 
 defmodule Hof do
   @spec tripler(number, (number -> number)) :: number
   def tripler(value, function), do: 3 * function.(value)
 end
 
-# Hof.tripler(1, fn(value) -> value *2 end)
-# Hof.tripler(1, &(&1 * 2))
-# Hof.tripler(:math.pi, &:math.cos(&1))
+Hof.tripler(1, fn(value) -> value *2 end)
+Hof.tripler(1, &(&1 * 2))
+Hof.tripler(:math.pi, &:math.cos(&1))
 
 list = [1, 2, 4, 8, 16, 32]
 list_2 = [2, 4, 6]

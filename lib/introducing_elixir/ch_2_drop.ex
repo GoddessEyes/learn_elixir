@@ -1,4 +1,5 @@
-# Chapter 2 functions and modules
+# Chapter 2: Functions and modules
+
 # Anonimous function definition
 fall_velocity = fn(distance) -> :math.sqrt(2 * 9.8 * distance) end
 fall_velocity.(20) # -> 19.79...
@@ -8,7 +9,7 @@ fall_velocity_2 = &(:math.sqrt(2 * 9.8 * &1))
 
 # Using module
 
-defmodule IntroducingElixir.Chapter2.Drop do
+defmodule IntroducingElixir.Ch2Drop.Drop do
   @doc """
   This documentation text
   """
@@ -19,7 +20,7 @@ defmodule IntroducingElixir.Chapter2.Drop do
 end
 
 
-defmodule IntroducingElixir.Chapter2.Convert do
+defmodule IntroducingElixir.Ch2Drop.Convert do
   @spec mps_to_mph(number) :: float
   def mps_to_mph(mps), do: 2.23693629 * mps
   @spec mps_to_kph(number) :: float

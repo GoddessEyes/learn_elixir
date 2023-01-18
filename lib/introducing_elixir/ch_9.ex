@@ -1,37 +1,6 @@
-# Chapter 9. Process
+# Chapter 9: Process
 
-# For iex test:
-
-# pid = self()
-
-# send(pid, :test)
-
-# # flush() for iex
-# send(pid, :test)
-
-# receive do
-#   value -> value
-# end
-
-
-# defmodule Bounce do
-#   def report do
-#     receive do
-#       val ->
-#         IO.puts("Received #{val} message")
-#         report()
-#     end
-#   end
-# end
-
-# pid = spawn(Bounce, :report, [])
-# send(pid, :test)
-
-# Process.register(self(), :proc_name)
-# send(:proc_name, :test)
-
-
-defmodule IntroducingElixir.Chapter9.Drop do
+defmodule IntroducingElixir.Ch9.Drop do
   def drop do
     receive do
       {from, planemo, distance} ->
@@ -53,3 +22,5 @@ defmodule IntroducingElixir.Chapter9.Drop do
     :math.sqrt(2 * 3.71 * distance)
   end
 end
+
+# TODO: compile Observer for erlang

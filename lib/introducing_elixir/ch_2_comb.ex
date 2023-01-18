@@ -1,6 +1,8 @@
+# Chapter 2: Functions and modules
+
 defmodule IntroducingElixir.Chapter2.Combined do
-  import IntroducingElixir.Chapter2.Drop
-  import IntroducingElixir.Chapter2.Convert
+  import IntroducingElixir.Ch2Drop.Drop
+  import IntroducingElixir.Ch2Drop.Convert
   import :math, only: [sqrt: 1]
 
   @spec height_to_mph(number) :: float
