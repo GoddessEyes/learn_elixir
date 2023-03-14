@@ -63,4 +63,21 @@ defmodule Solution do
     head_1 + head_2
   end
 
+  def keys_sum(map, key1, key2) do
+    value_1 = Map.get(map, key1, 0)
+    value_2 = Map.get(map, key2, 0)
+    value_1 + value_2
+  end
+
+  def keys_product(map, key1, key2) do
+    value_1 = Map.get(map, key1, 1)
+    value_2 = Map.get(map, key2, 1)
+    value_1 * value_2
+  end
+
+  def copy_key(from_map, to_map, key, default_value) do
+    value_for_put = Map.get(from_map, key, default_value)
+    Map.put(to_map, key, value_for_put)
+  end
+
 end
