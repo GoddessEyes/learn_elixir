@@ -63,31 +63,48 @@ defmodule Solution do
     head_1 + head_2
   end
 
+  @spec keys_sum(map, any, any) :: number
   def keys_sum(map, key1, key2) do
     value_1 = Map.get(map, key1, 0)
     value_2 = Map.get(map, key2, 0)
     value_1 + value_2
   end
 
+  @spec keys_product(map, any, any) :: number
   def keys_product(map, key1, key2) do
     value_1 = Map.get(map, key1, 1)
     value_2 = Map.get(map, key2, 1)
     value_1 * value_2
   end
 
+  @spec copy_key(map, map, any, any) :: map
   def copy_key(from_map, to_map, key, default_value) do
     value_for_put = Map.get(from_map, key, default_value)
     Map.put(to_map, key, value_for_put)
   end
 
+  @spec get_age({:user, any, any}) :: any
   def get_age(user) do
     {:user, _, age} = user
     age
   end
 
+  @spec get_names([{:user, any, any}, ...]) :: [...]
   def get_names(users) do
     [{:user, name_1, _}, {:user, name_2, _}, {:user, name_3, _}] = users
     [name_1, name_2, name_3]
+  end
+
+  @spec get_values(%{:a => any, :b => any, optional(any) => any}) :: {any, any}
+  def get_values(data) do
+    %{a: a_value, b: b_value} = data
+    {a_value, b_value}
+  end
+
+  @spec get_value_by_key(map, any) :: any
+  def get_value_by_key(data, key) do
+    %{^key => value} = data
+    value
   end
 
 end
