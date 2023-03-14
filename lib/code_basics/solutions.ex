@@ -80,4 +80,14 @@ defmodule Solution do
     Map.put(to_map, key, value_for_put)
   end
 
+  def get_age(user) do
+    {:user, _, age} = user
+    age
+  end
+
+  def get_names(users) do
+    [{:user, name_1, _}, {:user, name_2, _}, {:user, name_3, _}] = users
+    [name_1, name_2, name_3]
+  end
+
 end
