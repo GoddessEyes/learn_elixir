@@ -124,4 +124,22 @@ defmodule Solution do
     end
   end
 
+  def single_win?(a_win, b_win) do
+    cond do
+      a_win and b_win -> false
+      not a_win and not b_win -> false
+      true -> true
+    end
+  end
+
+  def double_win?(a_win, b_win, c_win) do
+    cond do
+      a_win and b_win and c_win -> false
+      a_win and b_win -> :ab
+      a_win and c_win -> :ac
+      b_win and c_win -> :bc
+      true -> false
+    end
+  end
+
 end
