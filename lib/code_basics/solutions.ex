@@ -107,4 +107,21 @@ defmodule Solution do
     value
   end
 
+  def join_game(user) do
+    case user do
+      {:user, _, _, :moderator} -> :ok
+      {:user, _, _, :admin} -> :ok
+      {:user, _, age, _} when age > 18 -> :ok
+      _ -> :error
+    end
+  end
+
+  def move_allowed?(current_color, figure) do
+    case figure do
+      {:pawn, color} when color == current_color -> true
+      {:rock, color} when color == current_color -> true
+      _ -> false
+    end
+  end
+
 end
