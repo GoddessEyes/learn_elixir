@@ -7,12 +7,11 @@ defmodule IntroducingElixir.Ch7.Map do
   def crud_map do
     planemo = %{earth: 9.8, moon: 1.6, mars: 3.71}
     %{earth: earth_gravity} = planemo
-    IO.inspect planemo
-    IO.puts earth_gravity
-    IO.puts planemo[:moon]
-    IO.puts planemo.mars
+    IO.inspect(planemo)
+    IO.puts(earth_gravity)
+    IO.puts(planemo[:moon])
+    IO.puts(planemo.mars)
   end
-
 end
 
 # Protocol
@@ -44,6 +43,17 @@ defimpl Inspect, for: IntroducingElixir.Ch7.Tower do
 
   def inspect(item, _options) do
     metres = concat(to_string(item.height), "m:")
-    concat([metres, break(), item.name, ",", break(), item.location, ",", break(), to_string(item.planemo)])
+
+    concat([
+      metres,
+      break(),
+      item.name,
+      ",",
+      break(),
+      item.location,
+      ",",
+      break(),
+      to_string(item.planemo)
+    ])
   end
 end

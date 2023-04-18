@@ -7,7 +7,6 @@ defmodule IntroducingElixir.Ch9.Drop do
         send(from, {planemo, distance, fall_velocity({planemo, distance})})
         drop()
     end
-
   end
 
   defp fall_velocity({:earth, distance}) when distance >= 0 do

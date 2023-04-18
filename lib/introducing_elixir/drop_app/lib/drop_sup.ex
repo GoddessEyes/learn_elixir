@@ -7,8 +7,6 @@ defmodule DropSup do
 
   def init([]) do
     child = [worker(DropServer, [], [])]
-    supervise(child, [{:strategy, :one_for_one}, {:max_restarts, 1},
-      {:max_seconds, 5}])
+    supervise(child, [{:strategy, :one_for_one}, {:max_restarts, 1}, {:max_seconds, 5}])
   end
-
 end

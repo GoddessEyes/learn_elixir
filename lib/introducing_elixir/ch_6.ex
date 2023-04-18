@@ -1,6 +1,5 @@
 # Chapter 6: Lists
 
-
 defmodule IntroducingElixir.Ch6.Overall do
   @spec product([]) :: 0
   def product([]), do: 0
@@ -37,12 +36,11 @@ defmodule IntroducingElixir.Ch6.ListDrop do
   end
 end
 
-
 defmodule IntroducingElixir.Ch6.Pascal do
   def triangle(rows), do: triangle([[0, 1, 0]], 1, rows)
 
   def triangle(list, count, rows) when count >= rows do
-    Enum.reverse list
+    Enum.reverse(list)
   end
 
   def triangle(list, count, rows) do

@@ -5,15 +5,14 @@ defmodule Hof do
   def tripler(value, function), do: 3 * function.(value)
 end
 
-Hof.tripler(1, fn(value) -> value *2 end)
+Hof.tripler(1, fn value -> value * 2 end)
 Hof.tripler(1, &(&1 * 2))
-Hof.tripler(:math.pi, &:math.cos(&1))
+Hof.tripler(:math.pi(), &:math.cos(&1))
 
 list = [1, 2, 4, 8, 16, 32]
 list_2 = [2, 4, 6]
 
-
-Enum.map list, &(&1 * &1)
+Enum.map(list, &(&1 * &1))
 
 for value <- list, do: value * value
 

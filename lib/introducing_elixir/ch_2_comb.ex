@@ -8,5 +8,5 @@ defmodule IntroducingElixir.Chapter2.Combined do
   @spec height_to_mph(number) :: float
   def height_to_mph(meters), do: meters |> fall_velocity |> mps_to_mph
 
-  def use_sqrt, do: sqrt 9
+  def use_sqrt, do: sqrt(9)
 end

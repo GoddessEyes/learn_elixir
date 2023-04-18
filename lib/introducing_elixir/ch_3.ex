@@ -15,7 +15,6 @@ defmodule IntroducingElixir.Ch3.Drop do
   end
 
   def fall_velocity({_, distance}) when distance < 0 do
-    :logger.log :warning, "Negative distance?"
+    :logger.log(:warning, "Negative distance?")
   end
-
 end

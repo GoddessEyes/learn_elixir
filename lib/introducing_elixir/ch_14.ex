@@ -4,6 +4,7 @@ defmodule Differce do
     IO.puts("#{inspect(x)}")
     x
   end
+
   @spec f_test(any) :: any
   def f_test(x) do
     IO.puts("#{inspect(x)}")
@@ -31,13 +32,11 @@ defmodule FunctionMaker do
   end
 end
 
-
 defmodule Multiply do
   require FunctionMaker
 
   FunctionMaker.create_multiplier(:double, 2)
   FunctionMaker.create_multiplier(:triple, 3)
-
 
   @spec example :: {number, number}
   def example do

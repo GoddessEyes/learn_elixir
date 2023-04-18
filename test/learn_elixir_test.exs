@@ -5,5 +5,4 @@ defmodule LearnElixirTest.IntroducingElixir.Ch10.Drop do
   test "Zero distance gives zero velocity" do
     assert Drop.fall_velocity(:earth, 0) == 0
   end
-
 end

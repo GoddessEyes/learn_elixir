@@ -1,25 +1,25 @@
-defmodule Solution do
+defmodule CodeBasics.Solution do
   @spec hello :: :ok
   def hello do
-    IO.puts "Hello, World!"
+    IO.puts("Hello, World!")
   end
 
   @spec print_twice(any) :: :ok
-  def print_twice (value) do
-    IO.puts value
-    IO.puts value
+  def print_twice(value) do
+    IO.puts(value)
+    IO.puts(value)
   end
 
   @spec concate_and_upcase(binary, binary) :: binary
   def concate_and_upcase(str1, str2) do
-    str1 <> str2 |> String.upcase(:ascii) |> String.trim
+    (str1 <> str2) |> String.upcase(:ascii) |> String.trim()
   end
 
   @spec do_math(integer, integer) :: :ok
   def do_math(a, b) do
-    (a + b) / b |> IO.puts
-    div(a, b) |> IO.puts
-    rem(b, a) |> IO.puts
+    ((a + b) / b) |> IO.puts()
+    div(a, b) |> IO.puts()
+    rem(b, a) |> IO.puts()
   end
 
   @spec any?(any, any, any, any) :: any
@@ -141,5 +141,4 @@ defmodule Solution do
       true -> false
     end
   end
-
 end
