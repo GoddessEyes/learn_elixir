@@ -34,4 +34,12 @@ defmodule CodeBasics.Solution1 do
   def check_who_win({{c, _, _}, {_, c, _}, {_, _, c}}) when c != :f, do: {:win, c}
   def check_who_win({{_, _, c}, {_, c, _}, {c, _, _}}) when c != :f, do: {:win, c}
   def check_who_win(_), do: :no_win
+
+  def process(str, num) do
+    str
+    |> String.trim_leading()
+    |> String.trim_trailing()
+    |> String.downcase()
+    |> String.duplicate(num)
+  end
 end
