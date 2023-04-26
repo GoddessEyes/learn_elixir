@@ -58,8 +58,6 @@ defmodule CodeBasics.Solution1 do
   end
 
   def range(from, to, accum) do
-    list = [from | accum]
-    next_val = from + 1
-    range(next_val, to, list)
+    range(from + 1, to, [from | accum])
   end
 end
