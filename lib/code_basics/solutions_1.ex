@@ -36,10 +36,30 @@ defmodule CodeBasics.Solution1 do
   def check_who_win(_), do: :no_win
 
   def process(str, num) do
+    # 15 / 22
     str
     |> String.trim_leading()
     |> String.trim_trailing()
     |> String.downcase()
     |> String.duplicate(num)
+  end
+
+  # 16/22
+  def range(from, to) when from > to do
+    []
+  end
+
+  def range(from, to) do
+    range(from, to, [])
+  end
+
+  def range(from, to, accum) when from == to do
+    Enum.reverse([to | accum])
+  end
+
+  def range(from, to, accum) do
+    list = [from | accum]
+    next_val = from + 1
+    range(next_val, to, list)
   end
 end
