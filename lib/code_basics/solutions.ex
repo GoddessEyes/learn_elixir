@@ -141,4 +141,18 @@ defmodule CodeBasics.Solution do
       true -> false
     end
   end
+
+  def filter_by_age(users, filter_age), do: filter_by_age(users, [], filter_age)
+
+  defp filter_by_age([], acc, _), do: Enum.reverse(acc)
+
+  defp filter_by_age([user | users], acc, filter_age) do
+    {:user, _, _, age} = user
+
+    if age > filter_age do
+      filter_by_age(users, [user | acc], filter_age)
+    else
+      filter_by_age(users, acc, filter_age)
+    end
+  end
 end
