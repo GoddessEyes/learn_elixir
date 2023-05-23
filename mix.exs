@@ -19,7 +19,7 @@ defmodule LearnElixir.MixProject do
 
   defp deps do
     [
-      {:dialyxir, "~> 1.0", only: [:dev], runtime: false}
+      {:ex_check, "> 0.0.0", only: [:dev, :test], runtime: false}
     ]
   end
 end
