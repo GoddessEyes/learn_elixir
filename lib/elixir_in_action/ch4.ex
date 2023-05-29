@@ -44,7 +44,7 @@ defmodule ElixirInAction.Ch4.Fraction do
   end
 end
 
-defmodule TodoList do
+defmodule ElixirInAction.Ch4.TodoList do
   defstruct auto_id: 1, entries: %{}
 
   def new(), do: %TodoList{}
