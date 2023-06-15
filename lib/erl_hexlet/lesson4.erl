@@ -6,7 +6,7 @@
 %%% @end
 %%% Created : 14. Jun 2023 11:07 PM
 %%%-------------------------------------------------------------------
--module(lessons4).
+-module(lesson4).
 -author("goddesseyes").
 
 %% API
