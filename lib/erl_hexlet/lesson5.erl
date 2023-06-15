@@ -2,15 +2,15 @@
 %%% @author goddesseyes
 %%% @copyright (C) 2023, <COMPANY>
 %%% @doc
-%%%
+%%% Key value and
 %%% @end
 %%% Created : 15. Jun 2023 12:23 PM
 %%%-------------------------------------------------------------------
 -module(lesson5).
 -author("goddesseyes").
-
+-include_lib("stdlib/include/ms_transform.hrl").
 %% API
--export([proplist_api/0, dict_api/0, gb_tree_api/0]).
+-export([proplist_api/0, dict_api/0, gb_tree_api/0, init/0, select/0, select/1]).
 
 
 proplist_api() ->
@@ -47,3 +47,22 @@ gb_tree_api() ->
   gb_trees:get(key1, T6),
   gb_trees:lookup(key1, T6),
   gb_trees:delete(key1, T6).
+
+%% ETS:
+
+init() ->
+  ets:new(my_ets, [named_table]),
+  ets:insert(my_ets, [{1, "Bob", 25, male},
+    {2, "Helen", 17, female},
+    {3, "Bill", 28, male},
+    {4, "Kate", 22, female},
+    {5, "Ivan", 14, male}]),
+  ok.
+select() ->
+  MS = ets:fun2ms(fun({Id, Name, Age, Gender})
+    when Age >= 17 andalso Gender =:= male ->
+    [Id, Name]
+                  end),
+  select(MS).
+select(MS) ->
+  ets:select(my_ets, MS).
