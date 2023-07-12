@@ -11,4 +11,5 @@ erl_crash.dump
 /.vscode/
 ttb_last_config
 .idea
+*.iml
 persist
